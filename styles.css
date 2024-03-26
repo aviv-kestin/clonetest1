@@ -86,15 +86,15 @@ body {
   }
 
   .gallery-img-wrapper {
-    width: 100%; /* Adjusted to full width for phone viewport */
+    width: 25%; /* Adjusted to full width for phone viewport */
     margin-bottom: 0; /* Removed margin bottom */
   }
 
   .info-panel {
-    top: 0; /* Adjusted to fill the top half of the viewport */
+    top: 10vh; /* Adjusted to fill the top half of the viewport */
     left: 0; /* Adjusted to align with top left corner */
     width: 100vw; /* Adjusted to fill entire width of viewport */
-    height: 50vh; /* Adjusted to fill the top half of the viewport */
+    height: 40vh; /* Adjusted to fill the top half of the viewport */
     background-color: rgb(156, 181, 190); /* Adjust background color as needed */
     z-index: 1;
     overflow-y: auto; /* Added overflow-y auto */
