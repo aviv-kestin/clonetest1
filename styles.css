@@ -81,7 +81,7 @@ body {
 
 @media screen and (max-width: 430px) and (max-height: 932px) {
   .image-container {
-    grid-template-columns: repeat(1, 1fr); /* Change to one column */
+    grid-template-columns: repeat(4, 1fr); /* Change to one column */
     margin-top: 0; /* Remove top margin */
     height: 50vh; /* Take up 50% of viewport height */
     transition: none; /* Remove transition for immediate resizing */
@@ -90,6 +90,7 @@ body {
   .info-panel {
     top: 0; /* Fill top half of viewport */
     height: 50vh; /* Take up 50% of viewport height */
+    width: 100vw;
   }
 
   .info-content img {
