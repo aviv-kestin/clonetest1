@@ -102,7 +102,7 @@ body {
   }
 
   .info-content img {
-    max-height: 30vh; /* Adjusted max-height for images in the info panel on phone viewport */
+    max-height: 40vh; /* Adjusted max-height for images in the info panel on phone viewport */
   }
 }
 
