@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const imageContainer = document.querySelector('.image-container');
     const infoPanel = document.querySelector('.info-panel');
+    const selectedImg = document.querySelector('.selected-img');
+    const title = document.querySelector('.title');
+    const subtitle = document.querySelector('.subtitle');
+    const bodyText = document.querySelector('.body-text');
     const closeBtn = document.querySelector('.close-btn');
 
     const isPhoneViewport = () => {
@@ -40,24 +44,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     img.classList.add('selected-img');
 
-                    infoPanel.style.top = '0';
-                    imageContainer.style.marginTop = isPhoneViewport() ? '50vh' : '0';
-
-                    const selectedImg = document.querySelector('.selected-img');
-                    const title = document.querySelector('.title');
-                    const subtitle = document.querySelector('.subtitle');
-                    const bodyText = document.querySelector('.body-text');
-
                     selectedImg.src = img.src;
                     title.textContent = img.parentElement.getAttribute('data-title');
                     subtitle.textContent = img.parentElement.getAttribute('data-subtitle');
                     bodyText.textContent = img.parentElement.getAttribute('data-body');
+
+                    if (isPhoneViewport()) {
+                        infoPanel.style.top = '0';
+                        imageContainer.style.marginTop = '50vh';
+                    } else {
+                        infoPanel.style.left = '0';
+                        imageContainer.style.transform = 'translateX(50vw)';
+                        imageContainer.style.width = '50vw';
+                        document.querySelectorAll('.gallery-img').forEach(colImg => {
+                            colImg.parentElement.style.width = '12.5vw';
+                        });
+                    }
                 });
             });
         });
 
     closeBtn.addEventListener('click', () => {
-        infoPanel.style.top = '-50vh';
-        imageContainer.style.marginTop = '0';
+        if (isPhoneViewport()) {
+            infoPanel.style.top = '-50vh';
+            imageContainer.style.marginTop = '0';
+        } else {
+            infoPanel.style.left = '-50vw';
+            document.querySelectorAll('.gallery-img').forEach(colImg => {
+                colImg.parentElement.style.width = '25vw';
+            });
+            setTimeout(() => {
+                imageContainer.style.transition = 'transform 1.97s ease, width 1.97s ease';
+                imageContainer.style.transform = 'translateX(0)';
+                imageContainer.style.width = '100vw';
+            }, 0);
+        }
     });
 });
