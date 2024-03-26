@@ -50,13 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     bodyText.textContent = img.parentElement.getAttribute('data-body');
 
                     if (isPhoneViewport()) {
-                        infoPanel.style.top = '0';
-                        infoPanel.style.left = '0';
+                        infoPanel.style.top = '0'; // Change from '0' to '50%' for top alignment
+                        infoPanel.style.left = '50%'; // Change from '0' to '50%' for center alignment
+                        infoPanel.style.transform = 'translate(-50%, 0)'; // Center the panel horizontally
                         infoPanel.style.width = '100vw';
                         infoPanel.style.height = '50vh';
                         infoPanel.style.backgroundColor = 'rgb(156, 181, 190)';
                         infoPanel.style.transition = 'top 2s ease';
                         imageContainer.style.marginTop = '50vh';
+                        imageContainer.style.transform = 'translateY(50vh)'; // Move gallery to bottom half
+                        imageContainer.style.width = '100vw'; // Ensure full width for images
                     } else {
                         infoPanel.style.left = '0';
                         infoPanel.style.top = '10vh';
@@ -75,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isPhoneViewport()) {
             infoPanel.style.top = '-50vh';
             imageContainer.style.marginTop = '0';
+            imageContainer.style.transform = 'translateY(0)'; // Reset gallery position
+            imageContainer.style.width = '100vw'; // Reset gallery width
         } else {
             infoPanel.style.left = '-50vw';
             infoPanel.style.top = '10vh';
