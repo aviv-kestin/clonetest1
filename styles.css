@@ -81,20 +81,19 @@ body {
 
 @media only screen and (max-width: 430px) and (max-height: 932px) {
   .image-container {
-    margin-top: 50vh;
-    grid-template-columns: repeat(4, 1fr); /* Adjusted for one column on phone viewport */
+    grid-template-columns: repeat(4, 1fr); /* Adjusted for four columns on phone viewport */
   }
 
   .gallery-img-wrapper {
-    width: 25%; /* Adjusted to full width for phone viewport */
+    width: 25%; /* Adjusted to 25% width for each image on phone viewport */
     margin-bottom: 0; /* Removed margin bottom */
   }
 
   .info-panel {
-    top: 10vh; /* Adjusted to fill the top half of the viewport */
+    top: 0; /* Adjusted to align with top */
     left: 0; /* Adjusted to align with top left corner */
     width: 100vw; /* Adjusted to fill entire width of viewport */
-    height: 40vh; /* Adjusted to fill the top half of the viewport */
+    height: 50vh; /* Adjusted to fill the top half of the viewport */
     background-color: rgb(156, 181, 190); /* Adjust background color as needed */
     z-index: 1;
     overflow-y: auto; /* Added overflow-y auto */
@@ -105,5 +104,4 @@ body {
     max-height: 40vh; /* Adjusted max-height for images in the info panel on phone viewport */
   }
 }
-
 
