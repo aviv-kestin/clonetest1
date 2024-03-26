@@ -94,9 +94,12 @@ body {
     top: 0; /* Adjusted to fill the top half of the viewport */
     height: 50vh; /* Adjusted to fill the top half of the viewport */
     overflow-y: auto; /* Added overflow-y auto */
+    width: 100vw; /* Adjusted to full width for phone viewport */
+    left: 0; /* Adjusted to start from the left edge */
   }
 
   .info-content img {
     max-height: 30vh; /* Adjusted max-height for images in the info panel on phone viewport */
   }
 }
+
