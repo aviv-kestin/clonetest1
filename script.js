@@ -51,15 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     if (isPhoneViewport()) {
                         infoPanel.style.top = '0';
+                        infoPanel.style.width = '100vw';
+                        infoPanel.style.height = '50vh';
+                        infoPanel.style.backgroundColor = 'rgb(156, 181, 190)';
+                        infoPanel.style.transition = 'top 2s ease';
                         imageContainer.style.marginTop = '50vh';
                     } else {
                         infoPanel.style.left = '0';
                         imageContainer.style.transform = 'translateX(50vw)';
                         imageContainer.style.width = '50vw';
-                        document.querySelectorAll('.gallery-img').forEach(colImg => {
-                            colImg.parentElement.style.width = '12.5vw';
-                        });
                     }
+
+                    document.querySelectorAll('.gallery-img').forEach(colImg => {
+                        colImg.parentElement.style.width = isPhoneViewport() ? '25vw' : '12.5vw';
+                    });
                 });
             });
         });
@@ -81,3 +86,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
